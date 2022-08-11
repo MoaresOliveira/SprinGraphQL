@@ -1,0 +1,23 @@
+type Coffee {
+    id: ID!
+    name: String
+    size: Size
+}
+
+enum Size {
+    SHORT
+    GRANDE
+    TALL
+    VENTI
+}
+
+type Query {
+    findAll: [Coffee]
+    findOne(id: ID!): Coffee
+}
+
+type Mutation {
+    createCoffe(name: String, size: Size): Coffee
+    updateCoffe(id: ID!, name: String, size: Size): Coffee
+    deleteCoffe(id: ID!): Boolean
+}
